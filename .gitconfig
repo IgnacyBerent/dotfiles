@@ -1,0 +1,7 @@
+[user]
+	email = 2gb02ignac@gmail.com
+	name = IgnacyBerent
+
+[alias]
+    acp = "!git add -u && git commit -m \"$1\" && git push"
+
