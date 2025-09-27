@@ -5,3 +5,4 @@ end
 alias fishc="nvim ~/.config/fish/config.fish"
 alias vim="nvim"
 alias discord="flatpak run com.discordapp.Discord"
+alias cat="bat"
