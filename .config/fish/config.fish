@@ -14,3 +14,4 @@ alias grep="rg"
 alias discord="flatpak run com.discordapp.Discord"
 
 zoxide init --cmd cd fish | source
+fzf --fish | source
