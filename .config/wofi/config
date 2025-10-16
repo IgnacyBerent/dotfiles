@@ -1,0 +1,8 @@
+[wofi]
+mode=drun
+width=600
+height=400
+location=center
+allow_images=true
+insensitive=true
+prompt=Search...

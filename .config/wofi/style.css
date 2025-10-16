@@ -1,0 +1,91 @@
+@define-color rosewater #f5e0dc;
+@define-color mauve #cba6f7;
+@define-color text #cdd6f4;
+@define-color overlay1 #7f849c;
+@define-color surface1 #45475a;
+@define-color mantle #181825;
+@define-color crust #11111b;
+@define-color hypr-green #00ff99;
+@define-color hypr-blue #00b7eb;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Main window */
+
+window {
+    background: linear-gradient(to right, @hypr-blue, @hypr-green);
+    padding: 2px; /* Simulate border width */
+    border-radius: 12px; /* Rounded corners */
+}
+
+/* Inner container to maintain crust background */
+#outer-box {
+    background-color: @crust;
+    color: @text;
+    margin: 2px;
+    border-radius: 10px; /* Slightly smaller to fit within padding */
+}
+
+/* Input bar */
+#input {
+    background-color: @mantle;
+    color: @text;
+    border: none;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+}
+
+/* Selected input text (when typing) */
+#input > text:selected {
+    color: @rosewater;
+}
+
+/* Entries (list of applications and sub-options) */
+#entry {
+    padding: 6px 12px;
+    background-color: transparent;
+}
+
+/* Selected entry (main and sub-options) */
+#entry:selected {
+    background-color: @surface1;
+    color: @mauve;
+}
+
+/* Child entries (sub-options, e.g., Firefox's "New Window") */
+#entry #entry {
+    background-color: @crust; /* Explicitly set sub-options background */
+}
+
+/* Selected child entry */
+#entry #entry:selected {
+    background-color: @surface1;
+    color: @mauve;
+}
+
+/* Icon in entries */
+#entry > img {
+    background-color: transparent;
+    margin-right: 6px; /* Margin between icon and text */
+}
+
+/* Text in entries */
+#text {
+    color: @text;
+    margin-left: 6px; /* Additional margin for text */
+}
+
+/* Selected text in entries */
+#text:selected {
+    color: @mauve;
+}
+
+/* Scrollable area */
+#scroll {
+    margin: 4px;
+}

@@ -1,18 +1,42 @@
 {
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": [
+    "custom/logo",
+    "hyprland/workspaces"
+  ],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["network", "pulseaudio", "clock"],
+  "modules-right": [
+    "pulseaudio",
+    "cpu", 
+    "memory", 
+    "clock", 
+    "custom/power"
+  ],
   "clock": {
-    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "  {:%a %d %H:%M}",
   },
   "pulseaudio": {
-      "format": "{icon}  {volume}%",
-      "format-muted": "",
-      "format-icons": {
-          "default": ["", "", " "]
-      },
-      "on-click": "pavucontrol"
-  }
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "󰘚 {used:0.1f}G/{total:0.1f}G",
+    "tooltip": false
+  },
+  "custom/logo": {
+    "format": "  ",
+    "tooltip": false,
+  },
+  "custom/power": {
+    "format": "󰤆",
+    "tooltip": false,
+  },
 }
