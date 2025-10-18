@@ -1,10 +1,10 @@
-@import "mocha.css"; 
+@import "mocha.css";
 
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 15px;
-    min-height: 0;
-    font-weight: bold;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15px;
+  min-height: 0;
+  font-weight: bold;
 }
 
 window#waybar {
@@ -15,9 +15,9 @@ window#waybar {
 }
 
 #window {
-    margin: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
+  margin: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #workspaces button {
@@ -54,6 +54,7 @@ window#waybar {
 
 #pulseaudio,
 #custom-power,
+#custom-nightmode,
 #clock,
 #cpu,
 #memory {
@@ -65,24 +66,28 @@ window#waybar {
 }
 
 #clock {
-    background-color: @mauve;
+  background-color: @maroon;
 }
 
 #pulseaudio {
-    background-color: @teal;
+  background-color: @sapphire;
 }
 
 #cpu {
-    background-color: @yellow;
+  background-color: @teal;
 }
 
 #memory {
-    background-color: @peach;
+  background-color: @peach;
 }
 
 #custom-power {
   background-color: @red;
   margin-right: 15px;
+}
+
+#custom-nightmode {
+  background-color: @yellow;
 }
 
 #custom-logo {
