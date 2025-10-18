@@ -1,0 +1,52 @@
+* {
+  background-image: none;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: JetBrains Mono;
+}
+
+window {
+  background-color: transparent;
+}
+
+button {
+  color: rgba(205, 214, 244, 1); /* Catppuccin-Mocha Text */
+  background-color: rgba(30, 30, 46, 1); /* Catppuccin-Mocha Base */
+  outline-style: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10%;
+  border-radius: 0px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+button:focus,
+button:hover {
+  background-color: rgba(49, 50, 68, 1); /* Catppuccin-Mocha Surface0 */
+  background-size: 20%;
+}
+
+#hibernate {
+  background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+  border-radius: 20px 0px 0px 0px;
+  margin: 6px 0px 0px 6px;
+}
+
+#logout {
+  background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+  border-radius: 0px 0px 0px 20px;
+  margin: 0px 0px 6px 6px;
+}
+
+#shutdown {
+  background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+  border-radius: 0px 20px 0px 0px;
+  margin: 6px 6px 0px 0px;
+}
+
+#reboot {
+  background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+  border-radius: 0px 0px 20px 0px;
+  margin: 0px 6px 6px 0px;
+}

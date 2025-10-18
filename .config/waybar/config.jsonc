@@ -1,17 +1,8 @@
 {
   "position": "top",
-  "modules-left": [
-    "custom/logo",
-    "hyprland/workspaces"
-  ],
+  "modules-left": ["custom/logo", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
-  "modules-right": [
-    "pulseaudio",
-    "cpu", 
-    "memory", 
-    "clock", 
-    "custom/power"
-  ],
+  "modules-right": ["pulseaudio", "cpu", "memory", "clock", "custom/power"],
   "clock": {
     "format": "  {:%a %d %H:%M}",
   },
@@ -19,17 +10,17 @@
     "format": "{icon}  {volume}%",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", " "],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
   "cpu": {
     "format": "󰍛 {usage}%",
-    "tooltip": false
+    "tooltip": false,
   },
   "memory": {
     "format": "󰘚 {used:0.1f}G/{total:0.1f}G",
-    "tooltip": false
+    "tooltip": false,
   },
   "custom/logo": {
     "format": "  ",
@@ -38,5 +29,6 @@
   "custom/power": {
     "format": "󰤆",
     "tooltip": false,
+    "on-click": "wlogout --buttons-per-row 2",
   },
 }
