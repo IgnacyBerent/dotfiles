@@ -19,4 +19,4 @@ alias okular="okular --stylesheet /home/iberent/.config/okular.qss"
 zoxide init --cmd cd fish | source
 fzf --fish | source
 set -U fish_user_paths $HOME/.local/bin $fish_user_paths
-oh-my-posh init fish --config ~/.poshthemes/montys.omp.json | source
+oh-my-posh init fish --config ~/.poshthemes/catppuccin_mocha.omp.json | source
