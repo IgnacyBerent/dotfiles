@@ -1,0 +1,10 @@
+catppuccin-cursors-mocha 2.0.0-1
+catppuccin-gtk-theme-mocha 1.0.3-1
+deezer 7.0.170-1
+neovim-remote 2.5.1-1
+oh-my-posh 27.2.1-1
+pyenv-virtualenv 1:1.2.4-1
+wl-gammarelay-rs 1.0.1-1
+wlogout 1.2.2-0
+yay 12.5.2-2
+yay-debug 12.5.2-2
