@@ -17,7 +17,7 @@
 
 #### AMD Packages
 
-vulkan-radeon xf86-video-amdgpu amd-ucode")
+vulkan-radeon xf86-video-amdgpu amd-ucode
 
 #### Intel Packages
 
