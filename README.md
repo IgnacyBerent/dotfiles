@@ -4,6 +4,20 @@
 
 ## Install
 
+### Replace AMD packages with Intel equivalents
+
+#### AMD Packages
+
+    vulkan-radeon xf86-video-amdgpu amd-ucode
+
+#### Intel Packages
+
+    vulkan-intel xf86-video-intel intel-ucode
+
+### Pacman
+
+    sudo pacman -S --needed - < pkglist.txt
+
 ### YAY
 
     sudo pacman -S --needed git base-devel
@@ -12,29 +26,20 @@
     makepkg -si --noconfirm
     cd ~
     rm -rf /tmp/yay
-
-### Replace AMD packages with Intel equivalents
-
-#### AMD Packages
-
-vulkan-radeon xf86-video-amdgpu amd-ucode
-
-#### Intel Packages
-
-vulkan-intel xf86-video-intel intel-ucode
+    yay -S --needed pkglist-aur-txt
 
 ### Tmux plugins
 
-`mkdir -p ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-`Ctrl + Space + I`
+    mkdir -p ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+    Ctrl + Space + I
 
 ### Okular theme
 
-`nvim ~/.local/share/applications/org.kde.okular.desktop`
+    nvim ~/.local/share/applications/org.kde.okular.desktop
 
-Change:
-`Exec=okular --stylesheet /home/iberent/.config/okular.qss %U`
+    Exec=okular --stylesheet /home/iberent/.config/okular.qss %U
 
 ## Symlinks
 
-`stow .`
+    stow .
