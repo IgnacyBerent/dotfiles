@@ -5,7 +5,7 @@ return {
     vim.g.tex_flavor = "latex" -- Treat .tex as LaTeX by default
     vim.g.vimtex_view_method = "general"
     vim.g.vimtex_view_general_viewer = "okular"
-    vim.g.vimtex_view_general_options = "--unique @pdf\\#src:@line@tex" -- Force single instance and forward search
+    vim.g.vimtex_view_general_options = "--unique @pdf\\#src:@line@tex --stylesheet /home/iberent/.config/okular.qss" -- Force single instance and forward search
     vim.g.vimtex_compiler_method = "latexmk"
     vim.g.vimtex_compiler_latexmk = {
       callback = 1, -- Auto-open viewer after successful compile

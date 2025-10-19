@@ -14,6 +14,7 @@ alias la="ls -a"
 alias ll="lsd -alh"
 alias tree="lsd --tree"
 alias grep="rg"
+alias okular="okular --stylesheet /home/iberent/.config/okular.qss"
 
 alias discord="flatpak run com.discordapp.Discord"
 
