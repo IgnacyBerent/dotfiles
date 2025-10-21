@@ -14,6 +14,10 @@
 
     vulkan-intel xf86-video-intel intel-ucode
 
+#### To remove
+
+    grub
+
 ### Pacman
 
     sudo pacman -S --needed - < pkglist.txt
@@ -26,7 +30,7 @@
     makepkg -si --noconfirm
     cd ~
     rm -rf /tmp/yay
-    yay -S --needed pkglist-aur-txt
+    yay -S --needed - < pkglist-aur.txt
 
 ### Tmux plugins
 
