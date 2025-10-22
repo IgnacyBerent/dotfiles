@@ -40,9 +40,17 @@
 
 ### Okular theme
 
+    cp /usr/share/applications/org.kde.okular.desktop ~/.local/share/applications/
+    mkdir -p ~/.local/share/applications
     nvim ~/.local/share/applications/org.kde.okular.desktop
 
     Exec=okular --stylesheet /home/iberent/.config/okular.qss %U
+
+### Gtk themes
+
+    papirus-folders -C cat-mocha-sky --theme Papirus-Dark
+    gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+    gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-blue-standard+default"
 
 ## Symlinks
 
