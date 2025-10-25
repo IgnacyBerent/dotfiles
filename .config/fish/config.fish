@@ -4,6 +4,9 @@ if status is-interactive
     set -x PATH $PYENV_ROOT/bin $PATH
     pyenv init - | source
     pyenv virtualenv-init - | source
+    set -Ux EDITOR nvim
+    set -Ux VISUAL nvim
+    set -Ux TERMINAL ghostly
 end
 
 alias fishc="nvim ~/.config/fish/config.fish"

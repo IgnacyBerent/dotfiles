@@ -55,3 +55,8 @@
 ## Symlinks
 
     stow .
+
+## Set Ghostly as Terminal Emulator in Thunar
+
+    Go to Thunar > Edit > Configure custom actions... > TerminalEmulator
+    ghostty --working-directory=%f
