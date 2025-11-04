@@ -1,14 +1,19 @@
 if status is-interactive
     fastfetch
-    set -x PYENV_ROOT $HOME/.pyenv
-    set -x PATH $PYENV_ROOT/bin $PATH
-    pyenv init - | source
-    pyenv virtualenv-init - | source
-    set -Ux EDITOR nvim
-    set -Ux VISUAL nvim
-    set -Ux TERMINAL ghostly
+
+    set -gx PYENV_ROOT $HOME/.pyenv
+    test -d $PYENV_ROOT/bin; and fish_add_path $PYENV_ROOT/bin
+    pyenv init - fish | source
 end
 
+# Environment globals
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx TERMINAL ghostly
+
+fish_add_path $HOME/.local/bin
+
+# Aliases
 alias fishc="nvim ~/.config/fish/config.fish"
 alias vim="nvim"
 alias cat="bat"
@@ -19,7 +24,7 @@ alias tree="lsd --tree"
 alias grep="rg"
 alias okular="okular --stylesheet /home/iberent/.config/okular.qss"
 
+# Tools init
 zoxide init --cmd cd fish | source
 fzf --fish | source
-set -U fish_user_paths $HOME/.local/bin $fish_user_paths
 oh-my-posh init fish --config ~/.poshthemes/catppuccin_mocha.omp.json | source
