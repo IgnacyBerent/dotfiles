@@ -22,5 +22,7 @@ return {
     vim.keymap.set("n", "\\ll", "<cmd>VimtexCompile<cr>", { desc = "Compile LaTeX" })
     vim.keymap.set("n", "\\lv", "<cmd>VimtexView<cr>", { desc = "View PDF" })
     vim.keymap.set("n", "\\lf", "<cmd>VimtexCompileSelected<cr>", { desc = "Forward Search" })
+    vim.keymap.set("x", "<leader>b", 'c\\textbf{<C-r>"}', { desc = "Bold selection" })
+    vim.keymap.set("x", "<leader>i", 'c\\textit{<C-r>"}', { desc = "Italic selection" })
   end,
 }
