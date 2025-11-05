@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=JupyterLab
+Comment=Launch JupyterLab in browser
+Exec=fish -c 'cd /home/iberent/repos && jupyter lab'
+Terminal=false
+Type=Application
+Categories=Development;Science;
+Icon=jupyter
+
