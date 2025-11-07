@@ -5,3 +5,5 @@
 [alias]
 	acp = "!f() { if [ -z \"$1\" ]; then echo 'Error: Commit message is required'; exit 1; fi; git add -u && git commit -m \"$1\" && git push; }; f"
 
+[core]
+	editor = vim

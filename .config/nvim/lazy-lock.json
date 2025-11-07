@@ -28,7 +28,7 @@
   "nvim-lint": { "branch": "master", "commit": "7a64f4067065c16a355d40d0d599b8ca6b25de6d" },
   "nvim-lspconfig": { "branch": "master", "commit": "d20d83b3f24f5884da73a9fc92fdc47e778b8d0d" },
   "nvim-scrollview": { "branch": "main", "commit": "316c37c96e6ab7d15e18f878366d0497179e8891" },
-  "nvim-treesitter": { "branch": "main", "commit": "8cdffc6d334731ce3703b6d870a5a34fd878208a" },
+  "nvim-treesitter": { "branch": "main", "commit": "6e42d823ce0a5a76180c473c119c7677738a09d1" },
   "nvim-treesitter-textobjects": { "branch": "main", "commit": "e91c585ac0ee760198dabc1fad2e6227effdcd5e" },
   "nvim-ts-autotag": { "branch": "main", "commit": "c4ca798ab95b316a768d51eaaaee48f64a4a46bc" },
   "persistence.nvim": { "branch": "main", "commit": "b20b2a7887bd39c1a356980b45e03250f3dce49c" },
@@ -41,6 +41,6 @@
   "ts-comments.nvim": { "branch": "main", "commit": "123a9fb12e7229342f807ec9e6de478b1102b041" },
   "venv-selector.nvim": { "branch": "main", "commit": "58bae72c84b9f7f864c879ec1896e384296f9ffb" },
   "vim-tpipeline": { "branch": "master", "commit": "bc6dfc10e26a8dd1ec2f0512050a8a0afaa9d090" },
-  "vimtex": { "branch": "master", "commit": "c6e2162066db4ceb44774f9bfb79fe97a4c25e71" },
+  "vimtex": { "branch": "master", "commit": "f5c37462c690da9a0d05cd12a7b9595b10b56200" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }
