@@ -57,10 +57,12 @@ window#waybar {
 #custom-nightmode,
 #clock,
 #cpu,
+#tray,
+#battery,
 #memory {
   border-radius: 4px;
-  margin: 6px 4px;
-  padding: 6px 12px;
+  margin: 3px 4px;
+  padding: 3px 12px;
   background-color: #1e1e2e;
   color: #181825;
 }
@@ -69,6 +71,7 @@ window#waybar {
   background-color: @pink;
 }
 
+#tray,
 #pulseaudio {
   background-color: @sapphire;
 }
@@ -80,9 +83,12 @@ window#waybar {
 
 #custom-power {
   background-color: @red;
-  margin-right: 15px;
+  margin-right: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
+#battery,
 #custom-nightmode {
   background-color: @yellow;
 }
@@ -91,7 +97,7 @@ window#waybar {
   padding-right: 7px;
   padding-left: 7px;
   margin-left: 5px;
-  font-size: 26px;
+  font-size: 22px;
   border-radius: 8px 0px 0px 8px;
   color: #1793d1;
 }
