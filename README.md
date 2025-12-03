@@ -52,6 +52,11 @@
     gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
     gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-blue-standard+default"
 
+### Jupyter Lab
+
+    pip install jupyterlab_catppuccin
+    go to setting theme and set Catppuccin Mocha everywhere
+
 ## Symlinks
 
     stow .

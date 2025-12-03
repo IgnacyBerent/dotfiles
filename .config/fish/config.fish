@@ -10,6 +10,8 @@ end
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx TERMINAL ghostly
+set -gx PATH /opt/android-sdk/platform-tools $PATH
+set -gx JAVA_HOME /usr/lib/jvm/java-21-openjdk
 
 fish_add_path $HOME/.local/bin
 
