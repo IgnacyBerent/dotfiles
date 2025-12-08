@@ -14,6 +14,7 @@ return {
         "-pdf",
         "-interaction=nonstopmode",
         "-synctex=1",
+        "--shell-escape",
       },
     }
     -- Disable auto-open to prevent multiple instances
