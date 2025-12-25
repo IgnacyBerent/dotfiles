@@ -2,6 +2,11 @@
 
 ---
 
+## Save pkglist
+
+    pacman -Qqen > pkglist.txt
+    pacman -Qqem > pkglist-aur.txt
+
 ## Install
 
 ### Replace AMD packages with Intel equivalents
