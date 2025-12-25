@@ -17,7 +17,7 @@
 
 #### Intel Packages
 
-    vulkan-intel xf86-video-intel intel-ucode
+    vulkan-intel intel-media-driver intel-ucode
 
 #### To remove
 
