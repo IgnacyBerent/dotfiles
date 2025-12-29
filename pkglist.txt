@@ -28,7 +28,6 @@ hyprland
 hyprlock
 hyprpaper
 imagemagick
-intel-ucode
 iwd
 jupyterlab
 less
@@ -74,14 +73,12 @@ ttf-jetbrains-mono-nerd
 unzip
 uv
 vim
-vulkan-intel
 waybar
 wget
 wl-clipboard
 wofi
 xdg-desktop-portal
 xdg-desktop-portal-hyprland
-xf86-video-intel
 xpad
 yazi
 zip
