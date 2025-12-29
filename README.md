@@ -72,3 +72,12 @@
     QT_QPA_PLATFORM="wayland;xcb"
     ANKI_WAYLAND=1
     MOZ_ENABLE_WAYLAND=1
+
+## Dotfiles Git
+
+    ssh-keygen -t ed25519 -C "2gb02ignac@gmail.com"
+    eval (ssh-agent -c)
+    ssh-add ~/.ssh/id_ed25519
+    cat ~/.ssh/id_ed25519.pub
+    GitHub > Settings > SSH and GPG keys -> New SSH Key
+    git remote set-url origin git@github.com:IgnacyBerent/dotfiles.git
