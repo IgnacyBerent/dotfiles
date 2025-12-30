@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background-color: rgba(24, 24, 37, 0.7);
+  background-color: rgba(24, 24, 37, 0.85);
   color: @overlay0;
   transition-property: background-color;
   transition-duration: 0.5s;
