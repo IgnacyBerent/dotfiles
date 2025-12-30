@@ -51,7 +51,7 @@
   },
 
   "custom/temperature": {
-    "format": "󰔏 {}kK",
+    "format": "󰔏 {}hK",
     "exec": "wl-gammarelay-rs watch \"{t}\" | jq --unbuffered --compact-output '{text: (. / 100 | round | tostring), class: \"temp\"}'",
     "return-type": "json",
     "on-click": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500",
