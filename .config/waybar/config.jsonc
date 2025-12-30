@@ -1,22 +1,46 @@
 {
   "position": "top",
-  "modules-left": ["custom/logo", "hyprland/workspaces"],
+  "modules-left": ["custom/logo", "network", "pulseaudio"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "battery",
-    "custom/nightmode",
-    "pulseaudio",
     "tray",
+    "custom/nightmode",
     "cpu",
     "memory",
     "clock",
-    "custom/power",
   ],
+  "hyprland/workspaces": {
+    "format": "{id}: {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": " ",
+    "window-rewrite": {
+      "title<.*vim.*>": " ",
+      "class<.*[Gg]hostty.*>": " ",
+      "class<firefox>": " ",
+      "class<thunar>": " ",
+    },
+  },
+
   "clock": {
-    "format": " {:%a %d %H:%M}",
+    "format": "  {:%a %d %H:%M}",
     "tooltip": false,
   },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀 {essid}",
+    "format-disconnected": "󰖪 Disconnected",
+    "tooltip-format": "{essid} ({signalStrength}%)",
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+  },
+
   "custom/nightmode": {
-    "format": "❍ {}",
+    "format": "󰈈 {}",
     "exec": "wl-gammarelay-rs watch '{ \"text\": \"{bp}%\", \"tooltip\": \"{t}K / {bp}%\", \"class\": \"nightmode\" }'",
     "return-type": "json",
     "tooltip": true,
@@ -24,37 +48,55 @@
     "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +50",
     "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -50",
   },
+
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "",
+    "format-muted": " ",
     "format-icons": {
-      "default": ["", "", " "],
+      "default": ["", " ", " "],
     },
     "on-click": "pavucontrol",
   },
+
   "cpu": {
-    "format": "C: {usage}%",
+    "format": "  {usage}%",
     "tooltip": false,
   },
+
   "memory": {
-    "format": "R: {used:0.1f}G",
+    "format": "  {used:0.1f}G",
     "tooltip": true,
     "tooltip-format": "RAM: {used:0.1f}/{total:0.1f} G",
   },
+
   "custom/logo": {
     "format": "  ",
     "tooltip": false,
   },
-  "custom/power": {
-    "format": "󰤆",
-    "tooltip": false,
-    "on-click": "wlogout --buttons-per-row 2",
-  },
+
   "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
     "format": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", ""],
-    "tooltip": true,
-    "tooltip-format": "Battery: {capacity}% ({time})",
-    "max-length": 25,
+    "format-charging": "{icon} {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": {
+      "charging": [
+        "󰢟 ",
+        "󰢜 ",
+        "󰂇 ",
+        "󰂈 ",
+        "󰢝 ",
+        "󰢞 ",
+        "󰂉 ",
+        "󰢞 ",
+        "󰂊 ",
+        "󰂋 ",
+        "󰂄",
+      ],
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
   },
 }

@@ -59,38 +59,50 @@ window#waybar {
 #cpu,
 #tray,
 #battery,
+#network,
 #memory {
   border-radius: 4px;
   margin: 3px 4px;
   padding: 3px 12px;
-  background-color: #1e1e2e;
-  color: #181825;
+  background-color: @base;
+  color: @text;
 }
 
 #clock {
-  background-color: @pink;
+  margin-right: 14px;
 }
 
-#tray,
+#network {
+  background-color: @mauve;
+  color: @base;
+  transition: all 0.3s ease;
+}
+#network.disconnected {
+  background-color: @base;
+  color: @text;
+}
+
 #pulseaudio {
-  background-color: @sapphire;
+  background-color: @mauve;
+  color: @base;
+  transition: all 0.3s ease;
+}
+#pulseaudio.muted {
+  background-color: @base;
+  color: @text;
 }
 
-#cpu,
-#memory {
-  background-color: @sky;
+#battery.charging {
+  background-color: @mauve;
+  color: @base;
 }
-
-#custom-power {
+#battery.warning:not(.charging) {
+  background-color: @peach;
+  color: @base;
+}
+#battery.critical:not(.charging) {
   background-color: @red;
-  margin-right: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-#battery,
-#custom-nightmode {
-  background-color: @yellow;
+  color: @base;
 }
 
 #custom-logo {
