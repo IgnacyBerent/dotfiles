@@ -73,6 +73,12 @@
     ANKI_WAYLAND=1
     MOZ_ENABLE_WAYLAND=1
 
+## Scripts
+
+     chmod +x ~/.config/hypr/scripts/battery-notify.sh
+     chmod +x ~/.config/hypr/scripts/suncycle.sh
+     chmod +x ~/.config/hypr/scripts/toggle-suncycle.sh
+
 ## Dotfiles Git
 
     ssh-keygen -t ed25519 -C "2gb02ignac@gmail.com"

@@ -1,6 +1,6 @@
 {
   "position": "top",
-  "modules-left": ["custom/logo", "network", "pulseaudio"],
+  "modules-left": ["custom/logo", "network", "pulseaudio", "custom/suncycle"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "battery",
@@ -19,7 +19,17 @@
       "title<.*vim.*>": " ",
       "class<.*[Gg]hostty.*>": " ",
       "class<firefox>": " ",
+      "class<[Zz]en.*>": "◯ ",
       "class<thunar>": " ",
+      "class<okular>": " ",
+      "class<Gimp>": " ",
+      "title<.*deezer.*>": "󰝚 ",
+      "class<Signal>": "󰭹 ",
+      "title<.*jupyterlab.*>": " ",
+      "title<.*btop.*>": "󰓅 ",
+      "title<.*yazi.*>": "󰇥 ",
+      "title<.*messenger.*>": "󰈎 ",
+      "class<discord>": " ",
     },
   },
 
@@ -78,15 +88,10 @@
     "tooltip-format": "RAM: {used:0.1f}/{total:0.1f} G",
   },
 
-  "custom/logo": {
-    "format": "  ",
-    "tooltip": false,
-  },
-
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15,
+      "critical": 10,
     },
     "format": "{icon} {capacity}%",
     "format-charging": "{icon} {capacity}%",
@@ -107,5 +112,19 @@
       ],
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     },
+  },
+
+  "custom/logo": {
+    "format": "  ",
+    "tooltip": false,
+  },
+
+  "custom/suncycle": {
+    "format": "{}",
+    "exec": "pgrep -f '[s]uncycle.sh' > /dev/null && echo '{\"text\":\"󰽥\", \"class\": \"active\"}' || echo '{\"text\":\"󰽥\", \"class\": \"inactive\"}'",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "/home/iberent/.config/hypr/scripts/toggle-suncycle.sh",
+    "tooltip-format": "Suncycle: Night-light &amp; Brightness automation",
   },
 }

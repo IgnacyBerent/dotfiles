@@ -52,10 +52,10 @@ window#waybar {
   background-color: @red;
 }
 
-#pulseaudio,
-#custom-power,
+#custom-suncycle,
 #custom-temperature,
 #custom-brightness,
+#pulseaudio,
 #clock,
 #cpu,
 #tray,
@@ -67,6 +67,7 @@ window#waybar {
   padding: 3px 12px;
   background-color: @base;
   color: @text;
+  transition: all 0.3s ease;
 }
 
 #clock {
@@ -76,7 +77,6 @@ window#waybar {
 #network {
   background-color: @mauve;
   color: @base;
-  transition: all 0.3s ease;
 }
 #network.disconnected {
   background-color: @base;
@@ -86,7 +86,6 @@ window#waybar {
 #pulseaudio {
   background-color: @mauve;
   color: @base;
-  transition: all 0.3s ease;
 }
 #pulseaudio.muted {
   background-color: @base;
@@ -104,6 +103,15 @@ window#waybar {
 #battery.critical:not(.charging) {
   background-color: @red;
   color: @base;
+}
+
+#custom-suncycle.active {
+  background-color: @mauve;
+  color: @base;
+}
+#custom-suncycle.inactive {
+  background-color: @base;
+  color: @text;
 }
 
 #custom-logo {
