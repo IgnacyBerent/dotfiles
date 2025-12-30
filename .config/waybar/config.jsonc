@@ -5,7 +5,8 @@
   "modules-right": [
     "battery",
     "tray",
-    "custom/nightmode",
+    "custom/temperature",
+    "custom/brightness",
     "cpu",
     "memory",
     "clock",
@@ -39,14 +40,22 @@
     "spacing": 10,
   },
 
-  "custom/nightmode": {
-    "format": "󰈈 {}",
-    "exec": "wl-gammarelay-rs watch '{ \"text\": \"{bp}%\", \"tooltip\": \"{t}K / {bp}%\", \"class\": \"nightmode\" }'",
+  "custom/temperature": {
+    "format": "󰔏 {}kK",
+    "exec": "wl-gammarelay-rs watch \"{t}\" | jq --unbuffered --compact-output '{text: (. / 100 | round | tostring), class: \"temp\"}'",
     "return-type": "json",
-    "tooltip": true,
     "on-click": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500",
-    "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +50",
-    "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -50",
+    "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
+    "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100",
+  },
+
+  "custom/brightness": {
+    "format": "󰃠 {}",
+    "exec": "wl-gammarelay-rs watch '{ \"text\": \"{bp}%\", \"class\": \"brightness\" }'",
+    "return-type": "json",
+    "on-click": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1.0",
+    "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02",
+    "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02",
   },
 
   "pulseaudio": {
