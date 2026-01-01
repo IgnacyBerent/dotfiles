@@ -2,6 +2,11 @@
 
 ---
 
+## Save pkglist
+
+    pacman -Qqen > pkglist.txt
+    pacman -Qqem > pkglist-aur.txt
+
 ## Install
 
 ### Replace AMD packages with Intel equivalents
@@ -12,7 +17,7 @@
 
 #### Intel Packages
 
-    vulkan-intel xf86-video-intel intel-ucode
+    vulkan-intel intel-media-driver intel-ucode
 
 #### To remove
 
@@ -35,33 +40,50 @@
 ### Tmux plugins
 
     mkdir -p ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
+    tmux
     Ctrl + Space + I
 
-### Okular theme
-
-    cp /usr/share/applications/org.kde.okular.desktop ~/.local/share/applications/
-    mkdir -p ~/.local/share/applications
-    nvim ~/.local/share/applications/org.kde.okular.desktop
-
-    Exec=okular --stylesheet /home/iberent/.config/okular.qss %U
+## Themes
 
 ### Gtk themes
 
-    papirus-folders -C cat-mocha-sky --theme Papirus-Dark
+    papirus-folders -C cat-mocha-mauve --theme Papirus-Dark
     gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
-    gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-blue-standard+default"
+    gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default"
 
 ### Jupyter Lab
 
-    pip install jupyterlab_catppuccin
-    go to setting theme and set Catppuccin Mocha everywhere
+    settings -> theme -> Catppuccin Mocha
+
+### Thunar
+
+    Go to Thunar > Edit > Configure custom actions... > Open Terminal Here -> settings
+    ghostty --working-directory=%f
 
 ## Symlinks
 
     stow .
 
-## Set Ghostly as Terminal Emulator in Thunar
+## Environment
 
-    Go to Thunar > Edit > Configure custom actions... > TerminalEmulator
-    ghostty --working-directory=%f
+    sudo vim /etc/environment
+    (paste)
+
+    QT_QPA_PLATFORM="wayland;xcb"
+    ANKI_WAYLAND=1
+    MOZ_ENABLE_WAYLAND=1
+
+## Scripts
+
+     chmod +x ~/.config/hypr/scripts/battery-notify.sh
+     chmod +x ~/.config/hypr/scripts/suncycle.sh
+     chmod +x ~/.config/hypr/scripts/toggle-suncycle.sh
+
+## Dotfiles Git
+
+    ssh-keygen -t ed25519 -C "2gb02ignac@gmail.com"
+    eval (ssh-agent -c)
+    ssh-add ~/.ssh/id_ed25519
+    cat ~/.ssh/id_ed25519.pub
+    GitHub > Settings > SSH and GPG keys -> New SSH Key
+    git remote set-url origin git@github.com:IgnacyBerent/dotfiles.git

@@ -1,0 +1,4 @@
+.local/*
+!.local/share/
+.local/share/*
+!.local/share/applications/

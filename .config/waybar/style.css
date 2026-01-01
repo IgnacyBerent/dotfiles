@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background-color: @mantle;
+  background-color: rgba(24, 24, 37, 0.85);
   color: @overlay0;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -52,46 +52,73 @@ window#waybar {
   background-color: @red;
 }
 
+#custom-suncycle,
+#custom-temperature,
+#custom-brightness,
 #pulseaudio,
-#custom-power,
-#custom-nightmode,
 #clock,
 #cpu,
+#tray,
+#battery,
+#network,
 #memory {
   border-radius: 4px;
-  margin: 6px 4px;
-  padding: 6px 12px;
-  background-color: #1e1e2e;
-  color: #181825;
+  margin: 3px 4px;
+  padding: 3px 12px;
+  background-color: @base;
+  color: @text;
+  transition: all 0.3s ease;
 }
 
 #clock {
-  background-color: @pink;
+  margin-right: 14px;
+}
+
+#network {
+  background-color: @mauve;
+  color: @base;
+}
+#network.disconnected {
+  background-color: @base;
+  color: @text;
 }
 
 #pulseaudio {
-  background-color: @sapphire;
+  background-color: @mauve;
+  color: @base;
+}
+#pulseaudio.muted {
+  background-color: @base;
+  color: @text;
 }
 
-#cpu,
-#memory {
-  background-color: @sky;
+#battery.charging {
+  background-color: @mauve;
+  color: @base;
 }
-
-#custom-power {
+#battery.warning:not(.charging) {
+  background-color: @peach;
+  color: @base;
+}
+#battery.critical:not(.charging) {
   background-color: @red;
-  margin-right: 15px;
+  color: @base;
 }
 
-#custom-nightmode {
-  background-color: @yellow;
+#custom-suncycle.active {
+  background-color: @mauve;
+  color: @base;
+}
+#custom-suncycle.inactive {
+  background-color: @base;
+  color: @text;
 }
 
 #custom-logo {
   padding-right: 7px;
   padding-left: 7px;
   margin-left: 5px;
-  font-size: 26px;
+  font-size: 22px;
   border-radius: 8px 0px 0px 8px;
   color: #1793d1;
 }
