@@ -1,7 +1,13 @@
+android-platform
+android-sdk
+android-sdk-build-tools
+android-sdk-cmdline-tools-latest
+android-sdk-platform-tools
 catppuccin-cursors-mocha
 catppuccin-gtk-theme-mocha
 deezer
-jupyterlab-catppuccin
+droidcam-obs-plugin-git
+flutter
 kvantum-theme-catppuccin-git
 neovim-remote
 oh-my-posh

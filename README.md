@@ -75,7 +75,6 @@
 
 ## Scripts
 
-     chmod +x ~/.config/hypr/scripts/battery-notify.sh
      chmod +x ~/.config/hypr/scripts/suncycle.sh
      chmod +x ~/.config/hypr/scripts/toggle-suncycle.sh
 
