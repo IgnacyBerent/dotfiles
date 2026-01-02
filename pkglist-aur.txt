@@ -12,6 +12,7 @@ kvantum-theme-catppuccin-git
 neovim-remote
 oh-my-posh
 papirus-folders-catppuccin-git
+proton-ge-custom-bin
 wl-gammarelay-rs
 wlogout
 yay
