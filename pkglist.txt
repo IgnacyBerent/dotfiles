@@ -16,6 +16,7 @@ firefox
 fish
 fzf
 gamemode
+gamescope
 ghostty
 gimp
 git
