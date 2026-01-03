@@ -8,6 +8,8 @@ biber
 btop
 cava
 discord
+docker
+docker-compose
 efibootmgr
 fastfetch
 fd

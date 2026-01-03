@@ -86,3 +86,11 @@
     cat ~/.ssh/id_ed25519.pub
     GitHub > Settings > SSH and GPG keys -> New SSH Key
     git remote set-url origin git@github.com:IgnacyBerent/dotfiles.git
+
+## Docker
+
+    sudo systemctl start docker.service
+    sudo systemctl enable docker.service
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    newgrp docker
