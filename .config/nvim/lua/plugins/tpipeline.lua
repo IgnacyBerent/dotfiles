@@ -8,6 +8,14 @@ return {
         active = function()
           local MiniStatusline = require("mini.statusline")
 
+          local function section_copilot()
+            local clients = vim.lsp.get_clients({ name = "copilot", bufnr = 0 })
+            if #clients > 0 then
+              return " "
+            end
+            return " "
+          end
+
           local function get_git_relative_path()
             local full_path = vim.fn.expand("%:p")
             local git_root = vim.fs.root(0, ".git")
@@ -28,6 +36,7 @@ return {
 
           local git_path = get_git_relative_path()
           local modified = vim.bo.modified and " [+]" or ""
+          local copilot = section_copilot()
 
           return MiniStatusline.combine_groups({
             { hl = mode_hl, strings = { mode } },
@@ -35,7 +44,7 @@ return {
             "%<",
             { hl = "MiniStatuslineFilename", strings = { git_path .. modified } },
             "%=",
-            { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
+            { hl = "MiniStatuslineFileinfo", strings = { copilot, fileinfo } },
             { hl = mode_hl, strings = { location } },
           })
         end,
