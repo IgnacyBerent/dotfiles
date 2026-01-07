@@ -12,10 +12,6 @@ return {
       {
         "<leader>aae",
         function()
-          require("avante.config").override({
-            provider = "copilot",
-            providers = { copilot = { model = "claude-3.5-sonnet" } },
-          })
           require("avante.api").ask({ question = "Explain how this code works explicitly in detail." })
         end,
         desc = "Explain Code",
@@ -25,10 +21,6 @@ return {
       {
         "<leader>aav",
         function()
-          require("avante.config").override({
-            provider = "copilot",
-            providers = { copilot = { model = "gpt-3.5-turbo" } },
-          })
           require("avante.api").ask({
             question = "Suggest a better name for this variable. Result provide in form of list of better examples.",
           })
@@ -40,10 +32,6 @@ return {
       {
         "<leader>aaf",
         function()
-          require("avante.config").override({
-            provider = "copilot",
-            providers = { copilot = { model = "claude-3.5-sonnet" } },
-          })
           require("avante.api").ask({
             question = "Analyse if any bugs or logic errors are present in code, and suggest fixes.",
           })
@@ -55,7 +43,6 @@ return {
       {
         "<leader>aao",
         function()
-          require("avante.config").override({ provider = "copilot", providers = { copilot = { model = "gpt-4o" } } })
           require("avante.api").ask({ question = "Optimize this code for performance and readability." })
         end,
         desc = "Optimize Code",
@@ -65,10 +52,6 @@ return {
       {
         "<leader>aat",
         function()
-          require("avante.config").override({
-            provider = "copilot",
-            providers = { copilot = { model = "claude-3.5-sonnet" } },
-          })
           require("avante.api").ask({ question = "Write comprehensive unit tests for this code." })
         end,
         desc = "Generate Tests",
@@ -86,7 +69,7 @@ return {
       },
       providers = {
         copilot = {
-          model = "claude-sonnet-4.5",
+          model = "gpt-5-mini",
         },
       },
     },
