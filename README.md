@@ -42,6 +42,7 @@
     mkdir -p ~/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     tmux
     Ctrl + Space + I
+    systemctl --user enable tmux
 
 ## Themes
 
