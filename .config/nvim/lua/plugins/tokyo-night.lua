@@ -6,7 +6,8 @@ return {
       hl.LineNrAbove = { fg = "#b2b8cf", bold = true }
       hl.LineNrBelow = { fg = "#b2b8cf", bold = true }
       hl.LineNr = { fg = "#b2b8cf", bold = true }
-      hl.CursorLine = { bg = "#4a3d38" }
+      hl.CursorLine = { bg = "#4a3d38", bold = true }
+      hl.DiagnosticUnnecessary = { fg = "#7d7d7d" }
     end,
   },
 }
