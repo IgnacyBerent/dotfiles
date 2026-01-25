@@ -5,6 +5,7 @@ base-devel
 bat
 biber
 btop
+clamav
 dhcpcd
 discord
 docker
@@ -13,6 +14,7 @@ efibootmgr
 fastfetch
 fd
 firefox
+firejail
 fish
 fzf
 ghostty
@@ -23,6 +25,7 @@ gvfs
 gvfs-mtp
 gvfs-nfs
 gvfs-smb
+hurl
 hypridle
 hyprland
 hyprlock
@@ -35,10 +38,13 @@ jq
 jupyterlab
 kvantum
 less
+libreoffice-fresh
 libva-utils
 linux
 linux-firmware
+linux-headers
 lsd
+mpv
 neovim
 network-manager-applet
 networkmanager
@@ -51,6 +57,7 @@ papirus-icon-theme
 pavucontrol
 pipewire-alsa
 pipewire-pulse
+qbittorrent
 qt6ct
 ripgrep
 signal-desktop
@@ -77,6 +84,7 @@ tlp
 tlp-rdw
 tmux
 ttf-jetbrains-mono-nerd
+unrar
 unzip
 uv
 vim
@@ -86,7 +94,9 @@ wget
 wl-clipboard
 wofi
 xdg-desktop-portal
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 yazi
+zathura
 zip
 zoxide

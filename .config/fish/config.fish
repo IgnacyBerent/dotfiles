@@ -22,6 +22,8 @@ alias ll="lsd -alh"
 alias tree="lsd --tree"
 alias grep="rg"
 alias docker="sudo docker"
+alias start_vcamera='sudo modprobe v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"'
+alias save_pkglist='pacman -Qqen > pkglist.txt && pacman -Qqem > pkglist-aur.txt && echo "Package lists updated!"'
 
 # Tools init
 zoxide init --cmd cd fish | source
