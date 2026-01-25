@@ -7,6 +7,7 @@ catppuccin-cursors-mocha
 catppuccin-gtk-theme-mocha
 deezer
 droidcam-obs-plugin-git
+excalidraw-pake-bin
 flutter
 kvantum-theme-catppuccin-git
 neovim-remote

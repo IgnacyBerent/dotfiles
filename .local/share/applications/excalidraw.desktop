@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Excalidraw (No GPU)
+Exec=excalidraw --disable-gpu %U
+Terminal=false
+Type=Application
+Icon=excalidraw
+Categories=Graphics;Design;
+Comment=Hand-drawn look diagrams (GPU Disabled)
+StartupWMClass=excalidraw
