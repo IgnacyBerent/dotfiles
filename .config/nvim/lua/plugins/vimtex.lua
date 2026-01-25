@@ -3,9 +3,7 @@ return {
   ft = "tex", -- Load only for .tex files
   config = function()
     vim.g.tex_flavor = "latex" -- Treat .tex as LaTeX by default
-    vim.g.vimtex_view_method = "general"
-    vim.g.vimtex_view_general_viewer = "okular"
-    vim.g.vimtex_view_general_options = "--unique @pdf\\#src:@line@tex" -- Force single instance and forward search
+    vim.g.vimtex_view_method = "zathura"
     vim.g.vimtex_compiler_method = "latexmk"
     vim.g.vimtex_autocmd_after = "BufWritePost"
     vim.g.vimtex_compiler_latexmk = {
@@ -18,8 +16,6 @@ return {
         "--shell-escape",
       },
     }
-    -- Disable auto-open to prevent multiple instances
-    vim.g.vimtex_view_automatic = 1
     -- Keymaps
     vim.keymap.set("n", "\\ll", "<cmd>VimtexCompile<cr>", { desc = "Compile LaTeX" })
     vim.keymap.set("n", "\\lv", "<cmd>VimtexView<cr>", { desc = "View PDF" })

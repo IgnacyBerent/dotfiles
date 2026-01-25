@@ -28,6 +28,7 @@ gvfs
 gvfs-mtp
 gvfs-nfs
 gvfs-smb
+hurl
 hypridle
 hyprland
 hyprlock
@@ -39,9 +40,11 @@ kvantum
 lib32-gamemode
 lib32-mesa
 lib32-vulkan-radeon
+libreoffice-fresh
 libva-utils
 linux
 linux-firmware
+linux-headers
 lsd
 man-db
 mesa
@@ -58,10 +61,12 @@ pipewire-alsa
 pipewire-pulse
 polkit-gnome
 python-pygments
+qbittorrent
 qt6ct
 ripgrep
 signal-desktop
 slurp
+sshfs
 steam
 stow
 sudo
@@ -84,6 +89,7 @@ thunar
 tmux
 ttf-jetbrains-mono-nerd
 ttf-liberation
+unrar
 unzip
 uv
 vim
@@ -94,8 +100,11 @@ wget
 wl-clipboard
 wofi
 xdg-desktop-portal
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xf86-video-amdgpu
 yazi
+zathura
+zathura-pdf-mupdf
 zip
 zoxide
