@@ -92,6 +92,7 @@ ttf-liberation
 unrar
 unzip
 uv
+v4l2loopback-dkms
 vim
 vulkan-radeon
 waifu2x-ncnn-vulkan
