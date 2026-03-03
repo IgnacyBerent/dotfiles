@@ -44,6 +44,9 @@ jupyterlab
 kvantum
 lazydocker
 less
+lib32-gamemode
+lib32-mesa
+lib32-vulkan-radeon
 libreoffice-fresh
 libva-utils
 linux
@@ -80,6 +83,7 @@ texlive-binextra
 texlive-fontsextra
 texlive-fontsrecommended
 texlive-fontutils
+texlive-langpolish
 texlive-latex
 texlive-latexextra
 texlive-latexrecommended

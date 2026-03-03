@@ -1,11 +1,21 @@
-# dotfiles
+# Arch Install Dotfiles Setup
 
 ---
 
-## Save pkglist
+## Save downloaded packages
 
-    pacman -Qqen > pkglist.txt
-    pacman -Qqem > pkglist-aur.txt
+```fish
+  pacman -Qqen > pkglist.txt
+  pacman -Qqem > pkglist-aur.txt
+
+```
+
+or:
+
+```fish
+  save_pkglist
+
+```
 
 ## Install
 
@@ -96,3 +106,8 @@
     sudo groupadd docker
     sudo usermod -aG docker $USER
     newgrp docker
+
+## Pacman cache
+
+    sudo pacman -S pacman-contrib
+    sudo systemctl enable --now paccache.timer
