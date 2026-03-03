@@ -37,6 +37,7 @@ imagemagick
 jq
 jupyterlab
 kvantum
+lazydocker
 lib32-gamemode
 lib32-mesa
 lib32-vulkan-radeon
@@ -79,6 +80,7 @@ texlive-binextra
 texlive-fontsextra
 texlive-fontsrecommended
 texlive-fontutils
+texlive-langpolish
 texlive-latex
 texlive-latexextra
 texlive-latexrecommended

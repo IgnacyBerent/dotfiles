@@ -3,6 +3,7 @@ android-sdk
 android-sdk-build-tools
 android-sdk-cmdline-tools-latest
 android-sdk-platform-tools
+betterbird-bin
 catppuccin-cursors-mocha
 catppuccin-gtk-theme-mocha
 deezer
@@ -19,3 +20,4 @@ wlogout
 yay
 yay-debug
 zen-browser-bin
+zoom
