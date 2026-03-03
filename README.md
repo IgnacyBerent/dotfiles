@@ -110,3 +110,7 @@ or:
 
     sudo pacman -S pacman-contrib
     sudo systemctl enable --now paccache.timer
+
+## SSD tweaks
+
+    sudo systemctl enable --now fstrim.timer
