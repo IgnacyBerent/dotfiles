@@ -8,12 +8,20 @@ return {
         active = function()
           local MiniStatusline = require("mini.statusline")
 
-          local function section_copilot()
-            local clients = vim.lsp.get_clients({ name = "copilot", bufnr = 0 })
-            if #clients > 0 then
+          local function section_gemma()
+            local has_llm = package.loaded["llm"]
+            if has_llm then
               return " "
             end
             return " "
+          end
+
+          local function section_qwen()
+            local has_companion = package.loaded["codecompanion"]
+            if has_companion then
+              return "󱚥 "
+            end
+            return ""
           end
 
           local function get_git_relative_path()
@@ -22,9 +30,7 @@ return {
             if not git_root or full_path == "" then
               return vim.fn.expand("%:.")
             end
-
             local relative = full_path:sub(#git_root + 2)
-            -- If we are at the root (editing a file in the same folder as .git)
             return relative ~= "" and relative or vim.fn.expand("%:t")
           end
 
@@ -36,7 +42,8 @@ return {
 
           local git_path = get_git_relative_path()
           local modified = vim.bo.modified and " [+]" or ""
-          local copilot = section_copilot()
+
+          local ai_status = section_gemma() .. " " .. section_qwen()
 
           return MiniStatusline.combine_groups({
             { hl = mode_hl, strings = { mode } },
@@ -44,7 +51,7 @@ return {
             "%<",
             { hl = "MiniStatuslineFilename", strings = { git_path .. modified } },
             "%=",
-            { hl = "MiniStatuslineFileinfo", strings = { copilot, fileinfo } },
+            { hl = "MiniStatuslineFileinfo", strings = { ai_status, fileinfo } },
             { hl = mode_hl, strings = { location } },
           })
         end,
@@ -58,7 +65,6 @@ return {
     config = function()
       vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "NONE" })
       vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "NONE" })
-
       vim.opt.fillchars:append({ stl = " ", stlnc = " " })
     end,
   },

@@ -114,3 +114,21 @@ or:
 ## SSD tweaks
 
     sudo systemctl enable --now fstrim.timer
+
+## Olama tweaks
+
+```fish
+sudo usermod -aG render,video $USER
+sudo mkdir -p /etc/systemd/system/ollama.service.d
+sudo vim /etc/systemd/system/ollama.service.d/override.conf
+```
+
+```
+[Service]
+Environment="HSA_OVERRIDE_GFX_VERSION=10.3.0"
+```
+
+```fish
+sudo systemctl daemon-reload
+sudo systemctl enable --now ollama
+```

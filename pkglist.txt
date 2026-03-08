@@ -62,6 +62,7 @@ nextcloud-client
 npm
 obs-studio
 okular
+ollama-rocm
 openssh
 os-prober
 papirus-icon-theme
@@ -72,6 +73,7 @@ polkit-gnome
 python-pygments
 qbittorrent
 qt6ct
+radeontop
 ripgrep
 signal-desktop
 slurp
