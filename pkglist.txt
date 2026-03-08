@@ -91,6 +91,7 @@ tlp
 tlp-rdw
 tmux
 ttf-jetbrains-mono-nerd
+ttf-liberation
 typst
 unrar
 unzip
