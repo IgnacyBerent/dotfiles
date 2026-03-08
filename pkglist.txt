@@ -101,6 +101,7 @@ thunar
 tmux
 ttf-jetbrains-mono-nerd
 ttf-liberation
+typst
 unrar
 unzip
 uv
