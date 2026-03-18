@@ -4,11 +4,15 @@ base
 base-devel
 bat
 biber
+blueman
+bluez
+bluez-utils
 btop
 clamav
 dhcpcd
 discord
 docker
+docker-buildx
 docker-compose
 efibootmgr
 fastfetch
@@ -35,8 +39,10 @@ intel-media-driver
 intel-ucode
 iwd
 jq
+jre-openjdk
 jupyterlab
 kvantum
+lazydocker
 less
 libreoffice-fresh
 libva-utils
@@ -53,6 +59,7 @@ npm
 okular
 openssh
 os-prober
+pacman-contrib
 papirus-icon-theme
 pavucontrol
 pipewire-alsa
@@ -84,6 +91,7 @@ tlp
 tlp-rdw
 tmux
 ttf-jetbrains-mono-nerd
+typst
 unrar
 unzip
 uv
