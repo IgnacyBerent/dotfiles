@@ -46,7 +46,6 @@ lazydocker
 less
 lib32-gamemode
 lib32-mesa
-lib32-vulkan-radeon
 libreoffice-fresh
 libva-utils
 linux
