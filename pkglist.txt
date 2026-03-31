@@ -25,6 +25,7 @@ ghostty
 gimp
 git
 grim
+gst-plugins-bad
 gvfs
 gvfs-mtp
 gvfs-nfs
@@ -35,7 +36,9 @@ hyprland
 hyprlock
 hyprpaper
 imagemagick
+intel-gpu-tools
 intel-media-driver
+intel-media-sdk
 intel-ucode
 iwd
 jq
@@ -46,7 +49,9 @@ lazydocker
 less
 lib32-gamemode
 lib32-mesa
+lib32-vulkan-intel
 libreoffice-fresh
+libva-intel-driver
 libva-utils
 linux
 linux-firmware
@@ -58,6 +63,7 @@ network-manager-applet
 networkmanager
 nextcloud-client
 npm
+obs-studio
 okular
 openssh
 os-prober
@@ -71,6 +77,7 @@ qt6ct
 ripgrep
 signal-desktop
 slurp
+steam
 stow
 sudo
 swappy
@@ -96,10 +103,10 @@ tmux
 ttf-jetbrains-mono-nerd
 ttf-liberation
 typst
-unrar
 unzip
 uv
 vim
+vpl-gpu-rt
 vulkan-intel
 waybar
 wget
