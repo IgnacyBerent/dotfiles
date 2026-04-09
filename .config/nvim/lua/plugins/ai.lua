@@ -1,54 +1,56 @@
 return {
   {
-    "olimorris/codecompanion.nvim",
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    lazy = false,
+    version = false,
+    build = "make",
+    opts = {
+      provider = "ollamalocal",
+      providers = {
+        ollamalocal = {
+          __inherited_from = "openai",
+          api_key_name = "",
+          endpoint = "http://127.0.0.1:11434/v1",
+          model = "qwen-coding",
+          timeout = 120000,
+        },
+      },
+      system_prompt = [[You are a Principal Backend Engineer, Software Architect, and strictly trained Security Auditor. 
+Your primary function is to review code, system designs, and concepts. 
+
+Do NOT act like a junior developer. Do NOT simply write the code for me unless I explicitly ask.
+
+When reviewing code, strictly adhere to:
+1. Architecture (SOLID, DRY).
+2. Security (OWASP, injection, memory leaks).
+3. Trade-offs (Pros/Cons tables).
+4. Direct, concise technical critique. No fluff.]],
+    },
     dependencies = {
+      "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    keys = {
-      { "<leader>aa", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "Action Palette" },
-      { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Toggle Chat" },
-      { "<leader>ai", "<cmd>CodeCompanion<cr>", mode = "n", desc = "Inline Prompt" },
-      { "<leader>ae", "<cmd>'<,'>CodeCompanion /explain<cr>", mode = "v", desc = "Explain Highlighted Code" },
-    },
-    config = function()
-      require("codecompanion").setup({
-        adapters = {
-          ollama = function()
-            return require("codecompanion.adapters").extend("ollama", {
-              schema = {
-                model = { default = "qwen3.5:27b" },
-              },
-            })
-          end,
-        },
-        strategies = {
-          chat = { adapter = "ollama" },
-          inline = { adapter = "ollama" },
-        },
+      "MunifTanjim/nui.nvim",
+      "hrsh7th/nvim-cmp",
+      "nvim-tree/nvim-web-devicons",
+      "zbirenbaum/copilot.lua",
+      {
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
         opts = {
-          system_prompt = function(opts)
-            if opts and opts.strategy == "inline" then
-              return [[You are an expert developer. Your only job is to write, refactor, or fix code. 
-              Do NOT include markdown formatting, explanations, or conversational text. Output strictly the modified code so it can be inserted directly into the file.]]
-            end
-
-            return [[You are a Principal Backend Engineer, Software Architect, and strictly trained Security Auditor. 
-              Your primary function is to review code, system designs, and concepts. 
-
-              Do NOT act like a junior developer. Do NOT simply write the code for me unless I explicitly ask.
-
-              When reviewing my code or answering questions, strictly adhere to the following framework:
-              1. **Architecture & Standards:** Evaluate the code against clean architecture principles (SOLID, DRY, Hexagonal). Point out tight coupling, poor abstraction, or scalability bottlenecks.
-              2. **Security Insights:** Act as an OWASP auditor. Actively look for injection flaws, race conditions, improper auth, IDOR, or memory leaks. Highlight them immediately.
-              3. **Trade-offs:** If suggesting a different approach (e.g., gRPC vs REST, or a different database index), always provide the pros, cons, and performance trade-offs.
-              4. **Formatting:** Be concise and direct. Use Markdown tables for comparisons. Use bold text for critical security warnings. Provide small, conceptual code snippets only to illustrate structural improvements.
-
-              Do not be overly polite or conversational. Deliver your technical critique directly.]]
-          end,
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = { insert_mode = true },
+          },
         },
-      })
-    end,
+      },
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = { file_types = { "markdown", "Avante" } },
+        ft = { "markdown", "Avante" },
+      },
+    },
   },
   {
     "huggingface/llm.nvim",
@@ -58,7 +60,8 @@ return {
       model = "qwen2.5-coder:1.5b-base",
       context_window = 4096,
       debounce_ms = 150,
-      tokens_to_clear = { "<|file_separator|>", "<|end_of_turn|>", "<|eos|>", "```", "\n" },
+      accept_keymap = "<C-a>",
+      tokens_to_clear = { "<|file_separator|>", "<|end_of_turn|>", "<|eos|>", "<|cursor|>", "```", "\n" },
       fim = {
         enabled = true,
         prefix = "<|fim_prefix|>",
