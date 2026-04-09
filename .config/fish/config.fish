@@ -14,6 +14,8 @@ fish_add_path $HOME/.local/bin
 
 # Aliases
 alias fishc="nvim ~/.config/fish/config.fish"
+alias c="clear"
+alias t="thunar"
 alias vim="nvim"
 alias cat="bat"
 alias ls="lsd"
