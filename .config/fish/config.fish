@@ -1,7 +1,3 @@
-if status is-interactive
-    fastfetch
-end
-
 # Environment globals
 set -gx EDITOR nvim
 set -gx VISUAL nvim

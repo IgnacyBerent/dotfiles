@@ -1,2 +1,3 @@
 theme = catppuccin-mocha.conf
 background-opacity = 0.85
+command = fish -c "fastfetch; exec fish"
