@@ -10,6 +10,7 @@ droidcam-obs-plugin-git
 excalidraw-pake-bin
 flutter
 kvantum-theme-catppuccin-git
+llama.cpp-vulkan
 neovim-remote
 oh-my-posh
 papirus-folders-catppuccin-git

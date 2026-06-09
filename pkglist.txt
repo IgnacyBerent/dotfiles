@@ -1,12 +1,14 @@
 7zip
 amd-ucode
 android-udev
+asar
 base
 base-devel
 bat
 betterbird-bin
 biber
 btop
+bun
 cachyos-keyring
 cachyos-mirrorlist
 cachyos-settings
@@ -14,7 +16,9 @@ cachyos-v3-mirrorlist
 cachyos-v4-mirrorlist
 cava
 discord
+dmidecode
 docker
+docker-buildx
 docker-compose
 efibootmgr
 fastfetch
@@ -58,6 +62,7 @@ lsd
 man-db
 mesa
 neovim
+nethogs
 nextcloud-client
 npm
 obs-studio
@@ -71,11 +76,14 @@ pavucontrol
 pipewire-alsa
 pipewire-pulse
 polkit-gnome
+progress
 python-pygments
 qbittorrent
 qt6ct
 radeontop
 ripgrep
+rocm-hip-sdk
+rust
 signal-desktop
 slurp
 sshfs
@@ -100,6 +108,7 @@ texlive-pictures
 texlive-xetex
 thunar
 tmux
+tree
 ttf-jetbrains-mono-nerd
 ttf-liberation
 typst

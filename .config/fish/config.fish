@@ -7,6 +7,7 @@ set -gx JAVA_HOME /usr/lib/jvm/java-21-openjdk
 set -gx QT_QPA_PLATFORMTHEME qt6ct
 
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.bun/bin
 
 # Aliases
 alias fishc="nvim ~/.config/fish/config.fish"
