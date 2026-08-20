@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ComfyUI
+Comment=Launch Local ComfyUI Server on AMD ROCm
+Exec=bash -c "cd /home/iberent/Builds/ComfyUI && ./run_comfy.sh"
+Icon=/home/iberent/Builds/ComfyUI/comfyui_icon.png
+Terminal=true
+Categories=Development;Science;
+StartupNotify=true
