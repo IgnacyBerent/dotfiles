@@ -1,0 +1,21 @@
+{
+  "defaultModel": "deepseek-v4-flash",
+  "defaultProvider": "deepseek",
+  "npmCommand": [
+    "bun"
+  ],
+  "packages": [
+    "npm:@ollama/pi-web-search",
+    "npm:pi-local-rag",
+    "npm:pi-zentui",
+    "npm:pi-markdown-preview",
+    "npm:@tintinweb/pi-tasks",
+    "npm:pi-llama-cpp",
+    "npm:pi-token-speed",
+    "npm:pi-pledit",
+    "npm:pi-ask-mode"
+  ],
+  "lastChangelogVersion": "0.84.2",
+  "defaultThinkingLevel": "high",
+  "theme": "dark"
+}
