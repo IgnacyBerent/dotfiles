@@ -111,3 +111,13 @@ or:
 
     sudo pacman -S pacman-contrib
     sudo systemctl enable --now paccache.timer
+
+## EDUROAM
+
+    sudo nmcli connection add type wifi con-name eduroam ifname wlan0 ssid eduroam \
+    wifi-sec.key-mgmt wpa-eap \
+    802-1x.eap ttls \
+    802-1x.phase2-auth pap \
+    802-1x.anonymous-identity "anonymous@your_uni_domain.pl" \
+    802-1x.identity "your_actual_username@your_uni_domain.pl" \
+    802-1x.password "your_password"
