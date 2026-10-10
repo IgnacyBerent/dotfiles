@@ -132,3 +132,10 @@ Environment="HSA_OVERRIDE_GFX_VERSION=10.3.0"
 sudo systemctl daemon-reload
 sudo systemctl enable --now ollama
 ```
+
+## Better bird css symlink
+
+```bash
+ln -s ~/dotfiles/custom_betterbird_theme/userChrome.css \
+      ~/.thunderbird/<acc_id>.default-default/chrome/userChrome.css
+```

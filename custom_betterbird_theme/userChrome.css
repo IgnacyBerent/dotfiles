@@ -1,0 +1,314 @@
+/* ==========================================================================
+   BETTERBIRD PROTON-STYLE THEME (CATPPUCCIN MOCHA MAUVE) — v3
+   Corrected read/unread selectors for Card View.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CATPPUCCIN MOCHA COLOR PALETTE
+   -------------------------------------------------------------------------- */
+:root {
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL UI OVERRIDES & TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
+}
+
+#messengerWindow {
+  background-color: var(--ctp-base) !important;
+  color: var(--ctp-text) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. TOP TOOLBAR & SEARCH BAR
+   -------------------------------------------------------------------------- */
+#unifiedToolbar,
+#toolbar-menubar {
+  background-color: var(--ctp-mantle) !important;
+  border-bottom: none !important;
+}
+
+#searchInput {
+  max-width: 400px !important;
+  border-radius: 8px !important;
+  background-color: var(--ctp-surface0) !important;
+  color: var(--ctp-text) !important;
+  border: 1px solid transparent !important;
+  padding: 6px 12px !important;
+  margin: 0 auto !important;
+}
+
+#searchInput:focus {
+  border-color: var(--ctp-mauve) !important;
+}
+
+#newMessageButton {
+  background-color: var(--ctp-mauve) !important;
+  color: var(--ctp-crust) !important;
+  font-weight: bold !important;
+  border-radius: 8px !important;
+  padding: 6px 16px !important;
+  border: none !important;
+}
+
+#newMessageButton:hover {
+  background-color: #b4befe !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. FOLDER PANE (SIDEBAR) — CLEAN & MINIMAL
+   -------------------------------------------------------------------------- */
+#folderPaneHeader {
+  display: none !important;
+}
+
+#folderPane {
+  background-color: transparent !important;
+  border-inline-end: none !important;
+}
+
+#folderPaneSplitter {
+  border-inline-end: none !important;
+}
+
+#folderTree > treechildren::-moz-tree-indentation {
+  width: 0px !important;
+}
+
+#folderTree > treechildren::-moz-tree-row {
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  padding: 6px 0 !important;
+  background-color: transparent !important;
+}
+
+#folderTree > treechildren::-moz-tree-row(hover) {
+  background-color: var(--ctp-surface0) !important;
+}
+
+#folderTree > treechildren::-moz-tree-row(selected) {
+  background-color: var(--ctp-mauve) !important;
+  color: var(--ctp-crust) !important;
+}
+
+#folderTree > treechildren::-moz-tree-cell-text(account) {
+  font-size: 11px !important;
+  color: var(--ctp-overlay2) !important;
+  font-weight: bold !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. MESSAGE LIST — CARD VIEW BASE
+   -------------------------------------------------------------------------- */
+
+/* Remove the default selection background from the outer row */
+#threadTree tr[is="thread-card"] {
+  background-color: transparent !important;
+}
+
+/* The visible card container inside each row */
+#threadTree tr[is="thread-card"] .card-container {
+  border-radius: 10px !important;
+  margin: 4px 8px !important;
+  padding: 6px 12px !important;
+  background-color: var(--ctp-base) !important;
+  border: 1px solid transparent !important;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease !important;
+}
+
+/* Hover state for any card */
+#threadTree tr[is="thread-card"]:hover .card-container {
+  background-color: var(--ctp-surface0) !important;
+}
+
+/* Selected state (overrides unread/read backgrounds) */
+#threadTree tr[is="thread-card"].selected .card-container,
+#threadTree tr[is="thread-card"][aria-selected="true"] .card-container,
+#threadTree tr[is="thread-card"][data-properties~="selected"] .card-container,
+#threadTree tr[is="thread-card"][data-properties~="focus"] .card-container {
+  background-color: var(--ctp-surface1) !important;
+  border: 1px solid var(--ctp-mauve) !important;
+  border-left: 4px solid var(--ctp-mauve) !important;
+}
+
+#threadTree
+  tr[is="thread-card"].selected
+  .card-container
+  :is(.sender, .subject, .date),
+#threadTree
+  tr[is="thread-card"][aria-selected="true"]
+  .card-container
+  :is(.sender, .subject, .date),
+#threadTree
+  tr[is="thread-card"][data-properties~="selected"]
+  .card-container
+  :is(.sender, .subject, .date) {
+  color: var(--ctp-text) !important;
+  font-weight: bold !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. READ MESSAGES — DARKER BACKGROUND, GREYED TEXT
+   -------------------------------------------------------------------------- */
+
+/* Target rows that do NOT have the unread property */
+#threadTree
+  tr[is="thread-card"]:not([data-properties~="unread"])
+  .card-container {
+  background-color: var(--ctp-crust) !important;
+  border-color: transparent !important;
+}
+
+/* Grey out all text inside read messages */
+#threadTree
+  tr[is="thread-card"]:not([data-properties~="unread"])
+  :is(.sender, .subject, .date, .preview) {
+  color: var(--ctp-overlay0) !important;
+  font-weight: normal !important;
+}
+
+/* Read message sender stays slightly more visible than the rest */
+#threadTree tr[is="thread-card"]:not([data-properties~="unread"]) :is(.sender) {
+  color: var(--ctp-overlay1) !important;
+}
+
+/* Hovering over a read card lightens it slightly but keeps it subdued */
+#threadTree
+  tr[is="thread-card"]:not([data-properties~="unread"]):hover
+  .card-container {
+  background-color: var(--ctp-surface0) !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. UNREAD MESSAGES — BRIGHTER BACKGROUND, ACCENT LINE, BOLD SUBJECT
+   -------------------------------------------------------------------------- */
+
+/* Brighter background + left accent bar */
+#threadTree tr[is="thread-card"][data-properties~="unread"] .card-container {
+  background-color: var(--ctp-mantle) !important;
+  border-left: 4px solid var(--ctp-mauve) !important;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+
+/* Bold, bright subject for unread */
+#threadTree tr[is="thread-card"][data-properties~="unread"] :is(.subject) {
+  color: var(--ctp-text) !important;
+  font-weight: bold !important;
+}
+
+/* Sender and date brighter than read messages */
+#threadTree
+  tr[is="thread-card"][data-properties~="unread"]
+  :is(.sender, .date) {
+  color: var(--ctp-subtext1) !important;
+}
+
+/* Hovering over an unread card */
+#threadTree
+  tr[is="thread-card"][data-properties~="unread"]:hover
+  .card-container {
+  background-color: var(--ctp-surface0) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. SCROLLBARS
+   -------------------------------------------------------------------------- */
+scrollbar {
+  background-color: var(--ctp-base) !important;
+}
+
+scrollbar thumb {
+  background-color: var(--ctp-surface1) !important;
+  border-radius: 6px !important;
+}
+
+scrollbar thumb:hover {
+  background-color: var(--ctp-surface2) !important;
+}
+
+/* ==========================================================================
+   SELECTION STATE — MUST BE LAST IN THE FILE TO WIN THE CASCADE
+   ========================================================================== */
+
+/* Force the row itself to have no background so only the card is visible */
+#threadTree tr[is="thread-card"][aria-selected="true"],
+#threadTree tr[is="thread-card"][data-properties~="selected"],
+#threadTree tr[is="thread-card"].selected {
+  background-color: transparent !important;
+}
+
+/* The visible card container when selected — overrides read & unread */
+#threadTree tr[is="thread-card"][aria-selected="true"] .card-container,
+#threadTree tr[is="thread-card"][data-properties~="selected"] .card-container,
+#threadTree tr[is="thread-card"].selected .card-container {
+  background-color: var(--ctp-surface1) !important;
+  border: 1px solid var(--ctp-mauve) !important;
+  border-left: 4px solid var(--ctp-mauve) !important;
+}
+
+/* Even when hovering a selected card, keep it selected-looking */
+#threadTree tr[is="thread-card"][aria-selected="true"]:hover .card-container,
+#threadTree
+  tr[is="thread-card"][data-properties~="selected"]:hover
+  .card-container,
+#threadTree tr[is="thread-card"].selected:hover .card-container {
+  background-color: var(--ctp-surface1) !important;
+  border-color: var(--ctp-mauve) !important;
+}
+
+/* Text inside selected cards — bright and bold, overrides read/unread text */
+#threadTree
+  tr[is="thread-card"][aria-selected="true"]
+  .card-container
+  :is(.sender, .subject, .date, .preview),
+#threadTree
+  tr[is="thread-card"][data-properties~="selected"]
+  .card-container
+  :is(.sender, .subject, .date, .preview),
+#threadTree
+  tr[is="thread-card"].selected
+  .card-container
+  :is(.sender, .subject, .date, .preview) {
+  color: var(--ctp-text) !important;
+  font-weight: 600 !important;
+}
+
+/* Date can be slightly softer than the subject/sender */
+#threadTree
+  tr[is="thread-card"][aria-selected="true"]
+  .card-container
+  :is(.date),
+#threadTree
+  tr[is="thread-card"][data-properties~="selected"]
+  .card-container
+  :is(.date),
+#threadTree tr[is="thread-card"].selected .card-container :is(.date) {
+  color: var(--ctp-subtext0) !important;
+}
