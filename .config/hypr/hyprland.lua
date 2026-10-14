@@ -41,6 +41,7 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("LIBVA_DRIVER_NAME", "radeonsi")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("GBM_BACKEND", "direct")
+hl.env("GDK_WAYLAND_DISABLE", "ext_background_effect_manager_v1")
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -80,6 +81,8 @@ hl.config({
 			size = 4,
 			passes = 2,
 			vibrancy = 0.1696,
+			new_optimizations = true,
+			ignore_opacity = true,
 		},
 	},
 
